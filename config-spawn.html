@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- This is an open-source website. -->
+<!-- Find more @ https://github.com/kdxhub/random_name_picker or @ https://gitee.com/kdxiaoyi/random_name_picker -->
+<!-- Only for personal studying. No commercial plz. -->
+<!-- Reprint please sign. -->
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>生成RNP配置文件</title>
+	<link rel="stylesheet" href="./res/DIN/font.css" />
+	<link rel="stylesheet" href="./res/hanyi/font.css" />
+	<link rel="stylesheet" href="./res/MiSans/font.css" />
+	<link rel="icon" href="./favicon.ico"></link>
+	<link rel="preload" href="./res/objects.png" as="image" />
+	<link rel="stylesheet" href="./css/spawning.css" />
+	</head>
+<body>
+  <div id="noscript" style="text-align: center;"><b>E07:由于您似乎禁用了Javascript或者出于其它原因，页面无法正常加载。<br>此外，该应用不兼容IE系浏览器。</b></div><!-- 未启用js或者js加载失败的提示 -->
+  <div id="infos" class="infos noSelect center">
+    <big><p>欢迎使用RNP配置生成工具！</p></big><br>
+    <p>易于查看的配置文件(list.js)生成工具</p>
+    <p>当前list.js模板版本：v4</p><br>
+    <p>请参阅我们的<a href="https://kdxhub.github.io/random_name_picker/docs/">教程</a>以应用配置文件。</p><br>
+    <p>左侧：输入对应星级<small>(支持3/4/5星，超出取最近，默认3)</small></p>
+    <p>右侧：输入姓名表<small>(每行一个)</small></p><br>
+    <button onclick="spawn()"><p class="black" id="spawnBtnP" style="position:relative;">生成配置文件</p></button>
+    <p id="errorTip" style="background:#f47a7aae;margin: .3rem 0 0 0;">× 模块spawn()加载失败</p>
+    <p id="doneTip" style="display:none;">✓ 已生成配置文件，替换list.js即可生效</p>
+    <small><p><a href="javascript:void(0);" onclick="clearT()">清空编辑区</a></p></small>
+    <small><p id="state"></p></small><br>
+  </div>
+  <div class="outputsArea center">
+    <br>历史记录最大长度：<input value="10" type="number" id="maxHistoryInput" min="5" max="2147483647"></input>
+      <br><small>↑ 在历史记录中的名字不会被重复抽出（以文件形式部署无效）</small>
+    <br><br>
+    <textarea class="stars" id="stars" spellcheck="false" warp="off" placeholder="输入对应星级…" ></textarea>
+    <textarea class="names" id="names" spellcheck="true" warp="off" placeholder="输入姓名表…" autofocus></textarea>
+    <br><textarea class="outputs" id="output" spellcheck="false" warp="off" placeholder="输出结果……" readonly>等待输出……</textarea>
+  </div>
+  <footer class="site-footer center noSelect">
+    <span class="site-footer-credits center">
+      <br>
+    	<small><p>kdxiaoyi (C) 2024</p></small>
+      <small><p>All Copyright Reserved.</p></small>
+      <small><p>↓ 开源项目地址 ↓</p>
+      <a href="https://github.com/kdxhub/random_name_picker">kdxhub/random_name_picker</a></small>
+    </span>
+  </footer>
+  <div data-Notice="仅仅用于防止list.js加载失败的占位元素" style='display:none;'>
+    <p id="main-loadedList"></p>
+    <button id='start'></button>
+    <p id="startButtonTips"></p>
+    <p id="startGuidancePrompt"></p>
+  </div>
+<!-- Copyright (C) 2024 kdxiaoyi, all right reserved. -->
+<!-- https://space.bilibili.com/1987247870 -->
+<script id="listJs" type="text/javascript" language="JavaScript" src=""></script>
+<script type="text/javascript" language="JavaScript" src="./javascript/config_spawn.js"></script>
+</body>
+</html>
